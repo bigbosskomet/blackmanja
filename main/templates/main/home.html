@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+<title>BlackManja | Crypto Website</title>
+{% endblock meta %}
+
+{% block content %}
+  <!-- <h1>Hello, world!</h1>
+  <p><img src="{% static 'img/django-logo-negative.svg' %}"></p> -->
+  <!-- Navbar  -->
+  <section id="navbar">
+    <div class="container">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3 bg-dark">
+        <div class="container">
+          <a class="navbar-brand"></a>
+          <img src="{% static 'img/logoblackmanja.png' %}" alt="" width="210" height="50">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="mx-auto"></div>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white btn-rounded btn btn-outline-secondary" href="#enk&desk">Enkripsi & Dekripsi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#qna">Q&A</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+<!-- Banner Image  -->
+<section id="home">
+  <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
+    <div class="content text-center">
+      <br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+  </div>
+</section>
+<!-- Banner Image  -->
+<br><br>
+<section id="enk&desk">
+  <div class="container">
+    <h2 class="text-center lh-base fw-bold mb-4">Enkripsi Dekripsi Algoritma AES</h2>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="jumbotron" id="jumbo">
+      <div class="encrypt-decrypt ">
+        <div class="encrypt-box row ">
+            <div class="encrypt-upper col-lg-6 ">
+              <h3>Enkripsi Teks</h3>
+              <i>Masukkan text yang akan di Enkripsi</i>
+              <textarea type="text" id="raw-data" class="box1 form-control" placeholder="Masukkan text"></textarea>
+              <i>Masukkan Kunci Enkripsi</i>
+              <input type="text" minlength="4" id="enc-password" class="password form-control" placeholder="Kunci Enkripsi"> <br>
+              <button class="btn btn-success btn-sm btn-rounded text-white" onclick="encr()">Encrypt</button>
+            </div>
+            <div class="result1 col-lg-6">
+              <div class="encrypt-bottom">
+                <h3>Hasil Enkripsi Teks</h3>
+                <i>Hasil text enkripsi</i>
+                <textarea readonly id="display1" class="output1 form-control"></textarea>
+              </div>
+            </div>
+        </div>
+        <hr>
+        <div class="decrypt-box row">
+            <div class="decrypt-upper col-lg-6">
+                <h3>Dekripsi Text</h3>
+                <i>Masukkan text yang akan di Dekripsi</i>
+                <textarea type="text" id="cipher-data" class="box2 form-control" placeholder="Enter encrypted text here"></textarea>
+                <i>Masukkan Kunci Dekripsi</i>
+                <input type="text" minlength="4" id="dec-password" class="password form-control" placeholder="Kunci Dekripsi"> <br>
+                <button class="btn btn-success btn-sm btn-rounded text-white" onclick="decr()">Decrypt</button>
+            </div>
+            <div class="result1 col-lg-6">
+              <div class="decrypt-bottom">
+                  <h3>Hasil Dekripsi Teks</h3>
+                  <i>Hasil text dekripsi</i>
+                  <textarea readonly id="display2" class="output2 form-control"></textarea>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+<!-- Section QNA -->
+<section id="qna">
+  <div class="container">
+    <h2 class="text-center lh-base fw-bold mb-4">Question and Answer :</h2>
+    <div class="accordion accordion-flush" id="kometAccordionFlush">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne"> Apa itu Enkripsi? </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#kometAccordionFlush">
+          <div class="accordion-body"> Enkripsi adalah proses teknis yang mengonversikan informasi menjadi kode rahasia, sehingga mengaburkan data yang Anda kirim, terima, atau simpan. Pada dasarnya, sebuah algoritme digunakan untuk mengacak data, sebelum pihak penerima menyatukan kembali data yang diacak tersebut menggunakan kunci dekripsi. Pesan yang ada di dalam file terenkripsi ini disebut sebagai "plaintext" atau teks polos, sementara dalam bentuk terenkripsi pesan itu disebut sebagai "ciphertext" atau teks yang disandikan. </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo"> Apa Manfaat Enkripsi Data? </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#kometAccordionFlush">
+          <div class="accordion-body"> Manfaat enkripsi data antara lain : <ol>
+              <li>Kerahasiaan Terjamin.</li>
+              <li>Proteksi pada Saluran Percakapan (WA, Line atau aplikasi chatting online lainnya dan email).</li>
+              <li>Memberikan Tambahan Perlindungan pada Digital Cash.</li>
+              <li>Bisa Digunakan sebagai Digital Signature.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree"> Apa itu Dekripsi? </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#kometAccordionFlush">
+          <div class="accordion-body"> Dekripsi adalah kebalikan dari enkripsi yaitu mengubah kembali bentuk tersamar tersebut menjadi informasi awal.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> <br><br>
+<!-- Section QNA END -->
+<!-- Section CONTACT START -->
+<footer class="bg-dark">
+  <section id="contact">
+      <div class="container"><br>
+          <div class="row mt-4 text-center text-lg-start text-white">
+              <div class="col-sm-12 col-lg-6">
+                  <h3 class="lh-base fw-bold">Address</h3>
+                  <address>
+                      <a href="" class="text-light text-decoration-none">Jln. Sumbersari Gg.2 No.119, Kec. Lowokwaru, Kota Malang, Jawa Timur 65144</a>
+                  </address>
+              </div>
+              <div class="col-sm-12 col-lg-3">
+                  <h3 class="lh-base fw-bold">Contact</h3>
+                  <a href="https://wa.me/628113610299" class="text-light text-decoration-none" target="_blank">
+                      <i class="fab fa-whatsapp fs-5"></i>&nbsp;
+                      A. Zidan Nur Hakim <br>(+628113610299)
+                  </a>
+              </div>
+              <div class="col-sm-12 col-lg-3 mt-3 mt-lg-0">
+                  <h3 class="lh-base fw-bold">Social links</h3>
+                  <a href="https://instagram.com/zidannurhakim_" class="text-light text-decoration-none" target="_blank">
+                      <i class="fab fa-instagram fs-5"></i>&nbsp;
+                      @zidannurhakim_
+                  </a><br>
+                  <a href="mailto:scooterishc@gmail.com" class="text-light text-decoration-none" target="_blank">
+                      <i class="fas fa-envelope fs-5"></i>&nbsp;
+                      scooterishc@gmail.com
+                  </a>
+              </div>
+          </div><hr>
+      </div>
+  </section>
+  <section id="copyright" class="text-center pb-4 text-white">
+      <p class="mb-0">
+          &copy; Copyright Mr. BlackManja 2021. All Rights Reserved
+      </p>
+      <p class="mb-0">
+          Made with <i class="fas fa-heart"></i> by Ahmad Zidan Nur Hakim.
+      </p>
+  </section>
+<!-- Section CONTACT END -->
+</footer>
+  
+{% endblock content %}
